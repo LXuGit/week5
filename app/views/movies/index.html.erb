@@ -1,0 +1,41 @@
+<div class="page-header">
+
+  <%= link_to "Add a New Movie", "/movies/new",
+              :class => "pull-right btn btn-success btn-large" %>
+
+  <h1>Movies</h1>
+</div>
+
+<% Movie.all.each do |movie| %>
+  <div class="row">
+    <div class="col-md-3">
+      <%= image_tag "http://ia.media-imdb.com/images/M/MV5BMTM2Njg2NjU5NF5BMl5BanBnXkFtZTYwODI5MDc4._V1_SY226_SX144_.jpg", :class => "col-md-10" %>
+    </div>
+    <div class="col-md-9">
+      <h2>
+        <%= link_to movie.title, "/movies/#{movie.id}" %>
+      </h2>
+      <p class="lead">Three astronauts must devise a strategy to return to Earth safely after their spacecraft undergoes massive internal damage.</p>
+      <p>Directed by Ron Howard</p>
+      <p>Starring Tom Hanks, Kevin Bacon</p>
+      <%= link_to "Delete This Movie", '#', class: 'pull-right btn btn-large btn-danger' %>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
