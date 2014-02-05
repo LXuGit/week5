@@ -30,3 +30,16 @@ all_movie_data.each do |movie_info|
   m.image_url = movie_info[:image_url]
   m.save
 end
+
+
+
+
+
+
+
+
+
+
+
+
+

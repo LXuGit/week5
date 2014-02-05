@@ -1,19 +1,19 @@
 <div class="page-header">
   <%= link_to "Delete This Movie", '#', class: 'pull-right btn btn-large btn-danger' %>
-  <h1>Movie Title Goes Here</h1>
+  <h1><%= @movie.title %></h1>
 </div>
 
 <div class="row">
   <div class="col-md-3">
-    <%= image_tag 'movie_poster.jpg' %>
+    <%= image_tag @movie.image_url %>
   </div>
   <div class="col-md-9">
     <p class="lead">
       <strong>Title:</strong>
-      Raiders of the Lost Ark
+      <%= @movie.title %>
     </p>
-    <p class="lead"><strong>Year: </strong>1981</p>
-    <p class="lead"><strong>Plot: </strong>Archeologist and adventurer Indiana Jones is hired by the US government to find the Ark of the Covenant before the Nazis.</p>
+    <p class="lead"><strong>Year: </strong><%= @movie.year %></p>
+    <p class="lead"><strong>Plot: </strong><%= @movie.plot %></p>
     <p class="lead"><strong>Director: </strong><em>Director goes here</em></p>
     <p class="lead"><strong>Cast: </strong><em>Cast goes here</em></p>
   </div>
