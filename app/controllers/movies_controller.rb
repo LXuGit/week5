@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     # render 'index'
+    @movies = Movie.all.order("year desc")
   end
 
   def show
@@ -17,6 +18,10 @@ class MoviesController < ApplicationController
 
   def toast
     the_movie_id = params["movie_id"]
+
+    m = Movie.find_by(:id => the_movie_id)
+    m.destroy
+
     # TO DO: delete the movie from the database
     redirect_to "/movies"
   end
@@ -26,6 +31,26 @@ class MoviesController < ApplicationController
   end
 
   def create
-
+    m = Movie.new
+    m.title = params["title"]
+    m.year = params["year"]
+    m.plot = params["plot"]
+    m.image_url = params["poster_url"]
+    m.save
+    redirect_to "/movies"
   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end

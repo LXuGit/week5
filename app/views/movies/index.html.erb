@@ -6,7 +6,7 @@
   <h1>Movies</h1>
 </div>
 
-<% Movie.all.each do |movie| %>
+<% @movies.each do |movie| %>
   <div class="row">
     <div class="col-md-3">
       <%= image_tag movie.image_url, :class => "col-md-10" %>
@@ -14,11 +14,12 @@
     <div class="col-md-9">
       <h2>
         <%= link_to movie.title, "/movies/#{movie.id}" %>
+        (<%= movie.year %>)
       </h2>
       <p class="lead"><%= movie.plot %></p>
       <p>Directed by Ron Howard</p>
       <p>Starring Tom Hanks, Kevin Bacon</p>
-      <%= link_to "Delete This Movie", '#', class: 'pull-right btn btn-large btn-danger' %>
+      <%= link_to "Delete This Movie", "/movies/delete/#{movie.id}", class: 'pull-right btn btn-large btn-danger' %>
     </div>
   </div>
 <% end %>
